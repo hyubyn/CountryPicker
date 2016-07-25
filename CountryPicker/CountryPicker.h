@@ -53,7 +53,7 @@
 
 @protocol CountryPickerDelegate <UIPickerViewDelegate>
 
-- (void)countryPicker:(CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code;
+- (void)countryPicker:(CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code dialCode: (NSString *)code;
 
 @end
 

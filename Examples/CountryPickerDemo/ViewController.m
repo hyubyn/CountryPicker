@@ -12,10 +12,10 @@
 
 @synthesize nameLabel, codeLabel;
 
-- (void)countryPicker:(__unused CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code
+- (void)countryPicker:(__unused CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code dialCode: (NSString *)dialCode
 {
     self.nameLabel.text = name;
-    self.codeLabel.text = code;
+    self.codeLabel.text = [NSString stringWithFormat: @"%@, %@", code, dialCode];
 }
 
 @end

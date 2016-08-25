@@ -57,7 +57,7 @@
 //doesn't use _ prefix to avoid name clash with superclass
 @synthesize delegate;
 @synthesize labelFont;
-
+@synthesize showCountryCode;
 + (NSArray *)countryNames
 {
     static NSArray *_countryNames = nil;
@@ -322,11 +322,11 @@
         image = [UIImage imageNamed:imagePath];
     ((UIImageView *)[view viewWithTag:2]).image = image;
 
-    
-    NSString    *countryCode = [NSString stringWithFormat:@"%@", [[self class] countryCodes][(NSUInteger) row]];
-
-     ((UILabel *)[view viewWithTag:3]).text = [NSString stringWithFormat:@"+%@",[[self getCountryCodeDictionary] objectForKey:countryCode]];
-
+    if (self.showCountryCode == true) {
+        NSString    *countryCode = [NSString stringWithFormat:@"%@", [[self class] countryCodes][(NSUInteger) row]];
+        
+        ((UILabel *)[view viewWithTag:3]).text = [NSString stringWithFormat:@"+%@",[[self getCountryCodeDictionary] objectForKey:countryCode]];
+    }
     return view;
 }
 
